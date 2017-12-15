@@ -26,11 +26,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
     character.cpp \
-    arrow.cpp
+    arrow.cpp \
+    boy.cpp
 
 HEADERS += \
     character.h \
-    arrow.h
+    arrow.h \
+    boy.h
 
 FORMS += \
         mainwindow.ui

@@ -3,7 +3,7 @@
 #include <QGraphicsView>
 #include "character.h"
 #include <QGraphicsScene>
-
+#include <QTimer>
 
 int main(int argc, char *argv[])
 {
@@ -28,12 +28,17 @@ int main(int argc, char *argv[])
     QGraphicsView *view =new QGraphicsView(gamewindow);
 
     //Do not want scroll bars to extend infinitely
-   view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     view->show();
 
     view->setFixedSize(600,800);
     gamewindow->setSceneRect(0,0,600,800);
+
+
+    QTimer *timer= new QTimer();
+    QObject::connect(timer, SIGNAL(timeout()), player, SLOT(create_boy()));
+    timer->start(1500);
     return a.exec();
 
 
