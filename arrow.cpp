@@ -3,14 +3,25 @@
 #include <QGraphicsScene>
 #include<QList>
 #include "boy.h"
-arrow::arrow(): QObject(), QGraphicsRectItem()
-{
+#include"maingame.h"
+#include"score.h"
 
-   setRect(250,700,10,50);
+extern  maingame*shooting;
+
+arrow::arrow(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem()
+{
+   setPos(250,710);
+    setPixmap(QPixmap(":new/image/heart.png"));
+    //QPixmap::scaled();
+    successsound=new QMediaPlayer();
+    successsound->setMedia(QUrl("qrc:new/sound/success.wav"));
+   //setRect(250,700,10,50);
    QTimer *timer=new QTimer();
    connect(timer, SIGNAL(timeout()),this, SLOT(shoot()));
   //every 30ms, the bullet will move
    timer->start(30);
+
+
 }
 
 void arrow::shoot()
@@ -21,6 +32,8 @@ void arrow::shoot()
     for(int i=0; i<collision.size(); ++i)
         if(typeid(*collision[i])==typeid(boy))
         {
+            shooting->score->score_increse();
+            successsound->play();
             scene()->removeItem(collision[i]);
             scene()->removeItem(this);
             delete collision[i];

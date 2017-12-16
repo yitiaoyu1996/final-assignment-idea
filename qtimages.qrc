@@ -1,2 +1,8 @@
-<!DOCTYPE RCC>
-<RCC version="1.0"/>
+<RCC>
+    <qresource prefix="/new/image">
+        <file>letter.icon</file>
+        <file>girl1.png</file>
+        <file>boy1.png</file>
+        <file>heart.png</file>
+    </qresource>
+</RCC>

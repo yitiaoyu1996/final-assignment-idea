@@ -1,14 +1,20 @@
 #ifndef ARROW_H
 #define ARROW_H
-#include <QGraphicsRectItem>
+#include "score.h"
+#include <QMediaPlayer>
+
+#include<QGraphicsPixmapItem>
+
 #include<QObject>
-class arrow: public QObject,public QGraphicsRectItem
+class arrow: public QObject,public QGraphicsPixmapItem
 { Q_OBJECT
 public:
-    arrow();
+    arrow(QGraphicsItem *parent=0);
 
 public slots:
     void shoot();
+private:
+    QMediaPlayer *successsound;
 };
 
 #endif // ARROW_H

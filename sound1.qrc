@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/new/sound1">
+        <file>fail.wav</file>
+        <file>shoot.wav</file>
+    </qresource>
+</RCC>

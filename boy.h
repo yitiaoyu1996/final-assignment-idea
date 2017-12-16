@@ -4,15 +4,18 @@
 #endif // BOY_H
 
 
-#include <QGraphicsRectItem>
+#include <QGraphicsPixmapItem>
+#include<QMediaPlayer>
 #include<QObject>
-class boy: public QObject,public QGraphicsRectItem
+class boy: public QObject,public QGraphicsPixmapItem
 { Q_OBJECT
 public:
-   boy();
+   boy(QGraphicsItem *parent=0);
 
 public slots:
     void move();
+private:
+    QMediaPlayer *failsound;
 };
 
 //#endif // BOY_H

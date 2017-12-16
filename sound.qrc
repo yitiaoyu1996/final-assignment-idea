@@ -1,2 +1,9 @@
-<!DOCTYPE RCC>
-<RCC version="1.0"/>
+<RCC>
+    <qresource prefix="/new/sound">
+        <file>success.wav</file>
+        <file>shoot.wav</file>
+        <file>background.mp3</file>
+        <file>error.wav</file>
+        <file>fail.wav</file>
+    </qresource>
+</RCC>

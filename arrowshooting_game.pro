@@ -4,7 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui \
+         multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -27,12 +28,23 @@ SOURCES += \
         main.cpp \
     character.cpp \
     arrow.cpp \
-    boy.cpp
+    boy.cpp \
+    maingame.cpp \
+    score.cpp \
+    life.cpp
 
 HEADERS += \
     character.h \
     arrow.h \
-    boy.h
+    boy.h \
+    maingame.h \
+    score.h \
+    life.h
 
 FORMS += \
         mainwindow.ui
+
+RESOURCES += \
+    qtimages.qrc \
+    sound.qrc \
+    sound1.qrc
