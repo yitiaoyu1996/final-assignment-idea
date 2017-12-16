@@ -5,9 +5,14 @@
 #include "maingame.h"
 #include "boy.h"
 #include<QMediaPlayer>
+#include <QImage>
+#include <QBrush>
 maingame::maingame(QWidget*parent)
 {
-    QGraphicsScene *gamewindow = new QGraphicsScene();
+    gamewindow = new QGraphicsScene();
+    gamewindow->setSceneRect(0,0,600,800);
+    gamewindow->setBackgroundBrush(QBrush(QImage(":/new/image/bg.jpg")));
+
     // scrollbar keeps extending, want to prevent this
 
     character *player = new character();
@@ -40,7 +45,7 @@ maingame::maingame(QWidget*parent)
     view->show();
 
     view->setFixedSize(600,800);
-    gamewindow->setSceneRect(0,0,600,800);
+    //gamewindow->setSceneRect(0,0,600,800);
 
 
     QTimer *timer= new QTimer();
@@ -49,6 +54,6 @@ maingame::maingame(QWidget*parent)
 
      QMediaPlayer *background = new QMediaPlayer();
      background->setMedia(QUrl("qrc:new/sound/background.mp3"));
-    // background->play();
+     background->play();
     //show();
 }

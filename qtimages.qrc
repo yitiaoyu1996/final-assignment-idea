@@ -4,5 +4,6 @@
         <file>girl1.png</file>
         <file>boy1.png</file>
         <file>heart.png</file>
+        <file>bg.jpg</file>
     </qresource>
 </RCC>
