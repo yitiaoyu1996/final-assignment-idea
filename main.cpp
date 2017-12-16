@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
 
     shooting =new maingame();
     //shooting->show();
+    shooting ->displayMainMenu("Heart Shooting", "Play");
     return a.exec();
 
 
