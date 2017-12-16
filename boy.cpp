@@ -16,7 +16,7 @@ boy::boy(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem()
   //every 30ms, the bullet will move
    timer->start(30);
    failsound=new QMediaPlayer();
-   failsound->setMedia(QUrl("qrc:new/sound1/shoot.wav"));
+   failsound->setMedia(QUrl("qrc:new/sound1/failsound.wav"));
 }
 
 void boy::move()
