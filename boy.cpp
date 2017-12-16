@@ -3,6 +3,7 @@
 #include <QGraphicsScene>
 #include<stdlib.h>
 #include"maingame.h"
+#include <QMediaPlayer>
 
 extern maingame *shooting;
 boy::boy(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem()
@@ -15,8 +16,9 @@ boy::boy(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem()
    connect(timer, SIGNAL(timeout()),this, SLOT(move()));
   //every 30ms, the bullet will move
    timer->start(30);
-   failsound=new QMediaPlayer();
-   failsound->setMedia(QUrl("qrc:/new/sound/fail.wav"));
+   misssound=new QMediaPlayer();
+
+   misssound->setMedia(QUrl(":new/sound/fail.wav"));
 }
 
 void boy::move()
@@ -27,8 +29,10 @@ void boy::move()
     if(pos().y()>750)
     {
 
+
         shooting->life1->life_decrease();
-         failsound->play();
+
+        misssound->play();
         scene()->removeItem(this);
         delete this;
     }

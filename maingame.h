@@ -6,7 +6,10 @@
 #include <QTimer>
 #include "Score.h"
 #include "life.h"
-class maingame{
+#include <QGraphicsTextItem>
+
+class maingame: public QObject{
+
   public:
     maingame(QWidget *parent=0);
 
@@ -14,5 +17,8 @@ class maingame{
     character *player;
     Score *score;
     life *life1;
+    void displayMainMenu(QString title, QString start);
+
 };
+
 #endif // MAINGAME_H

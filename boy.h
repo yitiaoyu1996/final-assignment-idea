@@ -1,8 +1,6 @@
 #ifndef BOY_H
 #define BOY_H
 
-#endif // BOY_H
-
 
 #include <QGraphicsPixmapItem>
 #include<QMediaPlayer>
@@ -15,7 +13,7 @@ public:
 public slots:
     void move();
 private:
-    QMediaPlayer *failsound;
+    QMediaPlayer *misssound;
 };
 
-//#endif // BOY_H
+#endif // BOY_H

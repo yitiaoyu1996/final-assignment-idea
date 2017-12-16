@@ -31,7 +31,8 @@ SOURCES += \
     boy.cpp \
     maingame.cpp \
     score.cpp \
-    life.cpp
+    life.cpp \
+    button.cpp
 
 HEADERS += \
     character.h \
@@ -39,7 +40,8 @@ HEADERS += \
     boy.h \
     maingame.h \
     score.h \
-    life.h
+    life.h \
+    button.h
 
 FORMS += \
         mainwindow.ui
@@ -48,3 +50,6 @@ RESOURCES += \
     qtimages.qrc \
     sound.qrc \
     sound1.qrc
+
+DISTFILES += \
+    README

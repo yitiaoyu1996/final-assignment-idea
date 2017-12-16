@@ -4,7 +4,7 @@
 #include <QGraphicsScene>
 
 
-life::life(QGraphicsItem *parent):QGraphicsTextItem(parent)
+life::life(QGraphicsItem *parent): QGraphicsTextItem(parent)
 {
     lifeleft=3;
     //QPixmap(":/new/image/heart.png");
@@ -26,3 +26,5 @@ int life::get_lifeleft()
 {
     return lifeleft;
 }
+
+

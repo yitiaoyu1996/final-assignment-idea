@@ -3,7 +3,7 @@
 #include <QGraphicsPixmapItem>
 
 #include <QObject>
-#include<QmediaPlayer>
+#include <QmediaPlayer>
 
  class character: public QObject, public QGraphicsPixmapItem
  {Q_OBJECT

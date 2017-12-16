@@ -36,14 +36,14 @@ void character::keyPressEvent(QKeyEvent *event)
       //add the arrow to the scene
       a->setPos(x(),y());
       scene()->addItem(a);
-      //if(shootsound->state()==QMediaPlayer::PlayingState){
-        //  shootsound->setPosition(0);
-      //}
-      //else if (shootsound->state()==QMediaPlayer::StoppedState)
-      //{
-        //  shootsound->play();
-      //}
-      shootsound->play();
+      if(shootsound->state()==QMediaPlayer::PlayingState){
+          shootsound->setPosition(0);
+      }
+      else if (shootsound->state()==QMediaPlayer::StoppedState)
+      {
+          shootsound->play();
+      }
+      //shootsound->play();
   }
 
 

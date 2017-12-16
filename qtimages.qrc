@@ -5,5 +5,7 @@
         <file>boy1.png</file>
         <file>heart.png</file>
         <file>bg.jpg</file>
+        <file>bg1.jpg</file>
+        <file>fail.wav</file>
     </qresource>
 </RCC>

@@ -33,7 +33,15 @@ void arrow::shoot()
         if(typeid(*collision[i])==typeid(boy))
         {
             shooting->score->score_increse();
-            successsound->play();
+
+            if(successsound->state()==QMediaPlayer::PlayingState){
+                successsound->setPosition(0);
+            }
+            else if (successsound->state()==QMediaPlayer::StoppedState)
+            {
+                successsound->play();
+            }
+            //successsound->play();
             scene()->removeItem(collision[i]);
             scene()->removeItem(this);
             delete collision[i];
