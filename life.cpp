@@ -2,8 +2,9 @@
 #include <QFont>
 #include <QGraphicsPixmapItem>
 #include <QGraphicsScene>
+#include "maingame.h"
 
-
+extern maingame *shooting;
 life::life(QGraphicsItem *parent): QGraphicsTextItem(parent)
 {
     lifeleft=3;
@@ -20,11 +21,17 @@ void life::life_decrease()
 {
     --lifeleft;
     setPlainText(QString("Life: ")+QString::number(lifeleft));
+    if(lifeleft==0)
+    {
+        shooting->gameOver();
+    }
+
 }
 
 int life::get_lifeleft()
 {
     return lifeleft;
 }
+
 
 

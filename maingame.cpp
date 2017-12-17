@@ -23,11 +23,11 @@ maingame::maingame(QWidget *parent) : QGraphicsView()
 
     //2 gamewindow->addItem(player);
 
-    score=new Score();
-    gamewindow->addItem(score);
+   // score=new Score();
+    //gamewindow->addItem(score);
 
-    life1=new life();
-    gamewindow->addItem(life1);
+   // life1=new life();
+    //gamewindow->addItem(life1);
 
     //want to make player focused
 
@@ -42,6 +42,7 @@ maingame::maingame(QWidget *parent) : QGraphicsView()
    // 3 QTimer *timer= new QTimer();
     // 4 QObject::connect(timer, SIGNAL(timeout()), player, SLOT(create_boy()));
    // 5 timer->start(1500);
+     QTimer *timer= new QTimer();
 
      QMediaPlayer *background = new QMediaPlayer();
      background->setMedia(QUrl("qrc:new/sound/background.mp3"));
@@ -69,6 +70,11 @@ void maingame::displayMainMenu(QString titlename, QString start)
 
 void maingame ::start(){
     character *player = new character();
+    score=new Score();
+        gamewindow->addItem(score);
+
+        life1=new life();
+        gamewindow->addItem(life1);
     gamewindow->addItem(player);
     player->setFlag(QGraphicsItem::ItemIsFocusable);
     player->setFocus();
@@ -79,12 +85,28 @@ void maingame ::start(){
 
     gamewindow->removeItem(title);
     delete title;
+
+
+
 }
 
 void maingame::gameOver(){
+
+
+
+    //for(size_t i=0,n=gamewindow->items().size()-1;i<n;i++)
+    //{
+      //  items()[i]->setEnabled(false);
+    //}
+
+
     displayMainMenu("Game Over!", "Play Again");
-    gamewindow->removeItem(player);
+
+
+
 }
+
+
 
 
 

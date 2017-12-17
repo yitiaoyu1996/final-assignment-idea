@@ -23,6 +23,7 @@ boy::boy(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem()
 
 void boy::move()
 {
+
     //want to move the arrow up, so only y value changes
     setPos(x(),y()+5);
     //delete boy if it goes out of the scene
@@ -33,8 +34,11 @@ void boy::move()
         shooting->life1->life_decrease();
 
         misssound->play();
+
+
         scene()->removeItem(this);
         delete this;
-    }
+        }
+
 
 }

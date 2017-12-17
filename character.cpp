@@ -4,7 +4,7 @@
 #include "arrow.h"
 #include"boy.h"
 #include"maingame.h"
-
+extern maingame *shooting;
 character::character(QGraphicsItem *parent): QGraphicsPixmapItem(parent)
 {
     shootsound=new QMediaPlayer();
@@ -51,6 +51,9 @@ void character::keyPressEvent(QKeyEvent *event)
 
 void character::create_boy()
 {
+   if(shooting->life1->get_lifeleft()==0)
+           return;
     boy* grey=new boy();
     scene()->addItem(grey);
+
 }

@@ -48,7 +48,10 @@ void arrow::shoot()
             delete this;
             return;
         }
-
+      if(shooting->life1->get_lifeleft()==0)
+      {
+          return;
+      }
 
     //want to move the arrow up, so only y value changes
     setPos(x(),y()-10);

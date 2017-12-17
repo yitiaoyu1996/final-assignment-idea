@@ -25,6 +25,7 @@ class maingame: public QGraphicsView{
     QGraphicsTextItem *title;
     button *a;
     void gameOver();
+    void closegame();
 
   public slots:
     void start();
